@@ -1,5 +1,5 @@
 {% macro snowflake__create_table_as(temporary, relation, compiled_code, language='sql') -%}
-  {%- set transient = config.get('transient', default=true) -%}
+  {%- set transient = config.get('transient') -%}
   {%- set iceberg = config.get('table_type') == 'iceberg' -%}
 
   {% if temporary -%}
